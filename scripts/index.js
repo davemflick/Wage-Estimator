@@ -8,7 +8,7 @@ var percent = percentInput.value;
 
 var displayWage = document.querySelector('.wageSpan')
 var displayQuarters = document.querySelector('.quartersSpan')
-var displayNewWage = document.querySelector('.newWageSpan')
+var newWageList = document.querySelector('.newWageList');
 
 displayWage.textContent = wage;
 displayQuarters.textContent = quarters;
@@ -28,14 +28,24 @@ percentInput.addEventListener('change', (e)=>{
 
 function calculateNewWage(wage, quarters, percent){
 	let per = 1 + +((percent/100).toFixed(2));
+	let count = 1;
 	while(quarters > 0){
 		wage *= per;
+		var li = document.createElement('li')
+		li.setAttribute('class', 'newWage');
+		li.appendChild(document.createTextNode('Quarter ' + count + ' - $' + wage.toFixed(2)))
+		newWageList.appendChild(li);
 		quarters--;
+		count++;
 	}
-	return wage.toFixed(2);
 }
 
 submit.addEventListener('click', (e)=>{
-	let newWage = calculateNewWage(wage, quarters, percent);
-	displayNewWage.textContent = '$' + newWage;
+	while(newWageList.firstChild){
+		newWageList.removeChild(newWageList.firstChild)
+	}
+	calculateNewWage(wage, quarters, percent);
 })
+
+
+
