@@ -72,7 +72,11 @@ ul li {
 		display: block;
 		width: 95%;
 		text-align: center;
-		font-size: 2.8em;
+		font-size: 2.4em;
+	}
+
+	.btn{
+		font-size: 1.3em;
 	}
 
 	h1{
@@ -81,11 +85,11 @@ ul li {
 	}
 
 	.resultsContainer h2{
-		font-size: 3em;
+		font-size: 2.9em;
 	}
 
 	ul li{
-		font-size: 2.7em;
+		font-size: 2.5em;
 	}
 
 	.form {
