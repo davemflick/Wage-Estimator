@@ -41,6 +41,7 @@ function calculateNewWage(wage, quarters, percent){
 }
 
 submit.addEventListener('click', (e)=>{
+	e.preventDefault();
 	while(newWageList.firstChild){
 		newWageList.removeChild(newWageList.firstChild)
 	}
