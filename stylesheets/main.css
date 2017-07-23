@@ -38,6 +38,10 @@ input:hover{
 input:focus{
 	background-color: #eee;
 }
+.barrier{
+	width: 100%;
+	display: block;
+}
 
 .btn.btn-primary{
 	display: block;
